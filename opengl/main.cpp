@@ -20,6 +20,8 @@ int main(int argc, char * argv[])
     glutInit(&argc, argv);
     glutInitWindowSize(512, 512);
     
+    glutInitWindowPosition(100, 300);
+#warning check out what happens when you tru GLUT_Single
     glutInitDisplayMode(GLUT_RGBA|GLUT_DEPTH|GLUT_DOUBLE);
     glutCreateWindow("trial");
     glutDisplayFunc(display);
