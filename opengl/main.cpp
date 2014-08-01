@@ -42,9 +42,14 @@ void reshape(int w, int h)
 	glLoadIdentity();
     
 	// Set the viewport to be the entire window
-	glViewport(0, 0, w, h);
+	glViewport(0, 0, w/2, h/2);
+    //refer to notes for what exactly glviewport does
+ 
     
-	// Set the correct perspective.
+       
+    
+    
+    // Set the correct perspective.
 	gluPerspective(45,ratio,1,1000);
     
 	// Get Back to the Modelview
