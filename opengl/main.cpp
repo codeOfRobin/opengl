@@ -9,6 +9,7 @@
 #include <iostream>
 #include <GLUT/glut.h>
 #include <OpenGL/OpenGL.h>
+float angle = 0.0f;
 
 void display(void);
 void reshape(int, int);
@@ -21,6 +22,7 @@ int main(int argc, char * argv[])
     windowInit();
     glutDisplayFunc(renderScene);
     glutReshapeFunc(reshape);
+    glutIdleFunc(renderScene);
     glutMainLoop();
     return 0;
 
@@ -42,11 +44,11 @@ void reshape(int w, int h)
 	glLoadIdentity();
     
 	// Set the viewport to be the entire window
-	glViewport(0, 0, w/2, h/2);
+    
+	glViewport(0, 0, w, h);
     //refer to notes for what exactly glviewport does
  
     
-       
     
     
     // Set the correct perspective.
@@ -69,11 +71,27 @@ void windowInit()
 
 void renderScene()
 {
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    glBegin(GL_TRIANGLES);
-    glVertex3f(-2,-2,-5.0);
-    glVertex3f(2,0.0,-5.0);
-    glVertex3f(0.0,2,-5.0);
-    glEnd();
-    glutSwapBuffers();
+    
+   	// Clear Color and Depth Buffers
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+	// Reset transformations
+	glLoadIdentity();
+	// Set the camera
+	gluLookAt(	0.0f, 6.0f, 6.0f,
+              0.0f, 0.0f,  0.0f,
+              0.0f, 1.0f,  0.0f);
+    
+	glRotatef(angle, 1.0f, 0.0f, 1.0f);
+    
+	glBegin(GL_TRIANGLES);
+    glVertex3f(-2.0f,-2.0f, 0.0f);
+    glVertex3f( 2.0f, 0.0f, 0.0);
+    glVertex3f( 0.0f, 2.0f, 0.0);
+	glEnd();
+    
+	angle+=1.0f;
+    
+	glutSwapBuffers();
+    
 }
