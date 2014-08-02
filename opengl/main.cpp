@@ -9,8 +9,11 @@
 #include <iostream>
 #include <GLUT/glut.h>
 #include <OpenGL/OpenGL.h>
+#include <math.h>       /* sin */
+
 float angle = 0.0f;
-float up=1.0f, down=1.0f, left=1.0f, right=1.0f;
+float lx=0.0f,lz=-1.0f;
+float x=0.0f,z=5.0f;
 
 
 void display(void);
@@ -20,7 +23,7 @@ void renderScene();
 void reshape();
 void keyProcessor(unsigned char key, int x,int y);
 void processSpecialKeys(int key, int x, int y);
-
+void drawASnowman();//Do you want to build a snowman? It doesn't have to be a snowman..
 
 
 int main(int argc, char * argv[])
@@ -35,6 +38,28 @@ int main(int argc, char * argv[])
     glutMainLoop();
     return 0;
 
+}
+
+
+void drawASnowman()
+{
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glTranslatef(0.0f, 0.75f, 0.0f);
+    glutSolidSphere(0.75f, 20, 20);
+    glTranslatef(0.0f, 1.0f, 0.0f);
+    glutSolidSphere(0.25f, 20, 20);
+    
+    glPushMatrix();
+	glColor3f(0.0f,0.0f,0.0f);
+	glTranslatef(0.05f, 0.10f, 0.18f);
+	glutSolidSphere(0.05f,10,10);
+	glTranslatef(-0.1f, 0.0f, 0.0f);
+	glutSolidSphere(0.05f,10,10);
+	glPopMatrix();
+    
+    // Draw Nose
+	glColor3f(1.0f, 0.5f , 0.5f);
+	glutSolidCone(0.08f,0.5f,10,2);
 }
 
 
@@ -74,6 +99,8 @@ void windowInit()
     glutInitWindowPosition(100, 100);
     glutInitWindowSize(512, 512);
     glutCreateWindow("trial");
+    glEnable(GL_DEPTH_TEST);
+
 
 }
 
@@ -87,20 +114,30 @@ void renderScene()
 	// Reset transformations
 	glLoadIdentity();
 	// Set the camera
-	gluLookAt(	0.0f, 0.0, 6.0f,
-              0.0f, 0.0f,  0.0f,
+	gluLookAt(	x, 1.0f, z,
+              lx+x, 1.0f,  lz+z,
               0.0f, 1.0f,  0.0f);
     
-	glRotatef(angle, 0.0, 0.0, 1.0);
+    glColor3f(0.9f, 0.9f, 0.9f);
     
-	glBegin(GL_TRIANGLES);
-
-    glVertex3f(-2.0f,-2.0f, 0.0f);
-    glVertex3f( 2.0f, 0.0f, 0.0);
-    glVertex3f( 0.0f, 2.0f, 0.0);
-	glEnd();
+    glBegin(GL_QUADS);
+    glVertex3f(-100.0f, 0.0f, 100.0f);
+    glVertex3f(100.0f, 0.0f, 100.0f);
+    glVertex3f(-100.0f, 0.0f, -100.0f);
+    glVertex3f(100.0f, 0.0f, -100.0f);
+	
+    glEnd();
     
-	angle+=up;
+    for (int i=-3; i<3; i++)
+    {
+        for (int j=-3; j<3; j++)
+        {
+            glPushMatrix();
+            glTranslatef(i*10.0, 0.0f, j*10.0);
+            drawASnowman();
+            glPopMatrix();
+        }
+    }
     
 	glutSwapBuffers();
     
@@ -119,18 +156,30 @@ void keyProcessor(unsigned char key, int x,int y)
 
 void processSpecialKeys(int key, int x, int y)
 {
+    float fraction=0.1f;
+
     if (key==GLUT_KEY_UP)
     {
-        up+=0.5f;
+        x=x+lx*fraction;
+        z=z+lz*fraction;
     }
     else if (key==GLUT_KEY_DOWN)
     {
-        up-=0.5f;
+        x=x-lx*fraction;
+        z=z-lz*fraction;
     }
     else if(key==GLUT_KEY_RIGHT)
     {
-        right+=0.5;
+        angle+=0.1f;
+        lx=cos(angle);
+        lz=-sin(angle);
     }
 
+    else if(key==GLUT_KEY_LEFT)
+    {
+        angle-=0.1f;
+        lx=cos(angle);
+        lz=-sin(angle);
+    }
 }
 
