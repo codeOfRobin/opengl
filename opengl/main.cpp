@@ -154,7 +154,7 @@ void keyProcessor(unsigned char key, int x,int y)
     }
 }
 
-void processSpecialKeys(int key, int x, int y)
+void processSpecialKeys(int key, int xx, int yy)
 {
     float fraction=0.1f;
 
@@ -170,18 +170,17 @@ void processSpecialKeys(int key, int x, int y)
     }
     else if(key==GLUT_KEY_RIGHT)
     {
-        angle+=0.1f;
-        lx=cos(angle);
-        lz=sin(angle);
-        std::cout<<angle<<" ";
+        angle += 0.01f;
+        lx = sin(angle);
+        lz = -cos(angle);
 
     }
 
     else if(key==GLUT_KEY_LEFT)
     {
-        angle-=0.1f;
-        lx=cos(angle);
-        lz=sin(angle);
+        angle -= 0.01f;
+        lx = sin(angle);
+        lz = -cos(angle);
         
         std::cout<<angle<<" "<<asin(lx)/PI*180;
     }
