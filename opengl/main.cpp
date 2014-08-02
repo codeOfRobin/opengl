@@ -123,9 +123,9 @@ void processSpecialKeys(int key, int x, int y)
     {
         up+=0.5f;
     }
-    else if (key==GLUT_KEY_LEFT)
+    else if (key==GLUT_KEY_DOWN)
     {
-        left+=0.5f;
+        up-=0.5f;
     }
     else if(key==GLUT_KEY_RIGHT)
     {
