@@ -10,7 +10,7 @@
 #include <GLUT/glut.h>
 #include <OpenGL/OpenGL.h>
 #include <math.h>       /* sin */
-
+#define PI 3.14159
 float angle = 0.0f;
 float lx=0.0f,lz=-1.0f;
 float x=0.0f,z=5.0f;
@@ -172,14 +172,18 @@ void processSpecialKeys(int key, int x, int y)
     {
         angle+=0.1f;
         lx=cos(angle);
-        lz=-sin(angle);
+        lz=sin(angle);
+        std::cout<<angle<<" ";
+
     }
 
     else if(key==GLUT_KEY_LEFT)
     {
         angle-=0.1f;
         lx=cos(angle);
-        lz=-sin(angle);
+        lz=sin(angle);
+        
+        std::cout<<angle<<" "<<asin(lx)/PI*180;
     }
 }
 
