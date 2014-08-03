@@ -123,7 +123,6 @@ void renderScene()
               0.0f, 1.0f,  0.0f);
     
     glColor3f(0.9f, 0.9f, 0.9f);
-    
     glBegin(GL_QUADS);
     glVertex3f(-100.0f, 0.0f, 100.0f);
     glVertex3f(100.0f, 0.0f, 100.0f);
@@ -181,7 +180,6 @@ void keyProcessor(unsigned char key, int x,int y)
 {
     if (key==27)
     {
-        std::cout<<x<<" asdcjknasd "<<y;
         exit(4);
     }
 }
@@ -214,7 +212,6 @@ void processSpecialKeys(int key, int xx, int yy)
         lx = sin(angle);
         lz = -cos(angle);
         
-        std::cout<<angle<<" "<<asin(lx)/PI*180;
     }
 }
 
