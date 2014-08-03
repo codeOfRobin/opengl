@@ -14,7 +14,7 @@
 float angle = 0.0f;
 float lx=0.0f,lz=-1.0f;
 float x=0.0f,z=5.0f;
-
+float deltaAngle=0.0f,deltaDist=0.0f;
 
 void display(void);
 void reshape(int, int);
@@ -24,6 +24,10 @@ void reshape();
 void keyProcessor(unsigned char key, int x,int y);
 void processSpecialKeys(int key, int x, int y);
 void drawASnowman();//Do you want to build a snowman? It doesn't have to be a snowman..
+void computeAngle();
+void computeDist();
+void pressKey(int key, int xx, int yy);
+void releaseKey(int key, int xx, int yy);
 
 
 int main(int argc, char * argv[])
@@ -139,11 +143,39 @@ void renderScene()
         }
     }
     
+    if (deltaAngle)
+    {
+        computeAngle();
+    }
+    else if (deltaDist)
+    {
+        computeDist();
+    }
+    glutSpecialFunc(pressKey);
+    
+	// here are the new entries
+	glutIgnoreKeyRepeat(1);
+	glutSpecialUpFunc(releaseKey);
+
 	glutSwapBuffers();
     
 }
 
 
+void computeAngle()
+{
+    angle=angle+deltaAngle;
+    lx=sin(angle);
+    lz=-cos(angle);
+}
+
+
+void computeDist()
+{
+    float fraction=0.1f;
+    x=x+lx*deltaDist*fraction;
+    z=z+lz*deltaDist*fraction;
+}
 
 void keyProcessor(unsigned char key, int x,int y)
 {
@@ -186,3 +218,44 @@ void processSpecialKeys(int key, int xx, int yy)
     }
 }
 
+
+void pressKey(int key, int xx, int yy)
+{
+    switch (key)
+    {
+        case GLUT_KEY_UP:
+            deltaDist=0.5f;
+            break;
+        case GLUT_KEY_DOWN:
+            deltaDist=-0.5f;
+            break;
+        case GLUT_KEY_LEFT:
+            deltaAngle=-0.01f;
+            break;
+        case GLUT_KEY_RIGHT:
+            deltaAngle=0.01f;
+            break;
+        default:
+            break;
+    }
+}
+
+
+void releaseKey(int key, int xx, int yy)
+{
+    switch (key)
+    {
+        case GLUT_KEY_UP:
+
+        case GLUT_KEY_DOWN:
+            deltaDist=-0.0f;
+            break;
+        case GLUT_KEY_LEFT:
+
+        case GLUT_KEY_RIGHT:
+            deltaAngle=0.0f;
+            break;
+        default:
+            break;
+    }
+}
