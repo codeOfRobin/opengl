@@ -28,6 +28,7 @@ void computeAngle();
 void computeDist();
 void pressKey(int key, int xx, int yy);
 void releaseKey(int key, int xx, int yy);
+void mousey(int xx, int yy);
 
 
 int main(int argc, char * argv[])
@@ -38,10 +39,18 @@ int main(int argc, char * argv[])
     glutReshapeFunc(reshape);
     glutIdleFunc(renderScene);
     glutKeyboardFunc(keyProcessor);
+    glutPassiveMotionFunc(mousey);
 	glutSpecialFunc(processSpecialKeys);
     glutMainLoop();
     return 0;
 
+}
+
+void mousey(int xx, int yy)
+{
+    float mouseShift=atan(double(yy)/xx);
+    lx = sin(mouseShift);
+    lz = -cos(mouseShift);
 }
 
 
