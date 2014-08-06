@@ -9,6 +9,7 @@
 #include <iostream>
 #include <GLUT/glut.h>
 #include <OpenGL/OpenGL.h>
+#include <OpenGL/glu.h>
 #include <math.h>       /* sin */
 #define PI 3.14159
 float angle = 0.0f;
