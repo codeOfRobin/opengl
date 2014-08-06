@@ -54,7 +54,7 @@ void mousey(int xx, int yy)
     lz = -cos(mouseShift);
 }
 
-
+//why didn't this get added?
 void drawASnowman()
 {
     glColor3f(1.0f, 1.0f, 1.0f);
