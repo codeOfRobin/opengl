@@ -135,8 +135,7 @@ void windowInit()
     glShadeModel (GL_FLAT);
     glPolygonMode(GL_FRONT, GL_FILL);
     glPolygonMode(GL_BACK, GL_LINE);
-    glEnable(GL_POLYGON_STIPPLE);
-    glPolygonStipple (fly);
+
 
     glEnable(GL_DEPTH_TEST);
 
