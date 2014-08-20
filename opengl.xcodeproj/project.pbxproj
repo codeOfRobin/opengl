@@ -11,6 +11,7 @@
 		7A7DD1D319897D55004E1777 /* opengl.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A7DD1D219897D55004E1777 /* opengl.1 */; };
 		7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1D91989807B004E1777 /* OpenGL.framework */; };
 		7A7DD1DC19898085004E1777 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1DB19898085004E1777 /* GLUT.framework */; };
+		7AD39F9319A53AFD00E987F0 /* Snazzle.l in Sources */ = {isa = PBXBuildFile; fileRef = 7AD39F9219A53AFD00E987F0 /* Snazzle.l */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		7A7DD1D219897D55004E1777 /* opengl.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = opengl.1; sourceTree = "<group>"; };
 		7A7DD1D91989807B004E1777 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		7A7DD1DB19898085004E1777 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		7AD39F9119A53A3200E987F0 /* SnazzleToParse */ = {isa = PBXFileReference; lastKnownFileType = text; path = SnazzleToParse; sourceTree = "<group>"; };
+		7AD39F9219A53AFD00E987F0 /* Snazzle.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = Snazzle.l; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 		7A7DD1CF19897D55004E1777 /* opengl */ = {
 			isa = PBXGroup;
 			children = (
+				7AD39F9219A53AFD00E987F0 /* Snazzle.l */,
+				7AD39F9119A53A3200E987F0 /* SnazzleToParse */,
 				7A7DD1D019897D55004E1777 /* main.cpp */,
 				7A7DD1D219897D55004E1777 /* opengl.1 */,
 			);
@@ -125,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD39F9319A53AFD00E987F0 /* Snazzle.l in Sources */,
 				7A7DD1D119897D55004E1777 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
