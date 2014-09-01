@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2D4CFE19B3B6F40037C7C7 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */; };
+		7A2D4CFF19B3B6F40037C7C7 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */; };
+		7A2D4D0019B3B6F40037C7C7 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */; };
 		7A7DD1D119897D55004E1777 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DD1D019897D55004E1777 /* main.cpp */; };
 		7A7DD1D319897D55004E1777 /* opengl.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A7DD1D219897D55004E1777 /* opengl.1 */; };
 		7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1D91989807B004E1777 /* OpenGL.framework */; };
@@ -27,6 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletDynamics.framework; sourceTree = "<group>"; };
+		7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinearMath.framework; sourceTree = "<group>"; };
+		7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletCollision.framework; sourceTree = "<group>"; };
 		7A7DD1CD19897D55004E1777 /* opengl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = opengl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7DD1D019897D55004E1777 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7A7DD1D219897D55004E1777 /* opengl.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = opengl.1; sourceTree = "<group>"; };
@@ -39,6 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2D4CFE19B3B6F40037C7C7 /* BulletDynamics.framework in Frameworks */,
+				7A2D4CFF19B3B6F40037C7C7 /* LinearMath.framework in Frameworks */,
+				7A2D4D0019B3B6F40037C7C7 /* BulletCollision.framework in Frameworks */,
 				7A7DD1DC19898085004E1777 /* GLUT.framework in Frameworks */,
 				7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */,
 			);
@@ -50,6 +59,9 @@
 		7A7DD1C419897D55004E1777 = {
 			isa = PBXGroup;
 			children = (
+				7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */,
+				7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */,
+				7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */,
 				7A7DD1DB19898085004E1777 /* GLUT.framework */,
 				7A7DD1D91989807B004E1777 /* OpenGL.framework */,
 				7A7DD1CF19897D55004E1777 /* opengl */,
@@ -135,7 +147,7 @@
 		7A7DD1D419897D55004E1777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -149,6 +161,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -166,14 +179,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
 		7A7DD1D519897D55004E1777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -189,6 +202,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -198,13 +212,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
 		7A7DD1D719897D55004E1777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
 			};
@@ -213,6 +231,10 @@
 		7A7DD1D819897D55004E1777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
 			};

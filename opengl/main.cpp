@@ -5,6 +5,7 @@
 //  Created by Robin Malhotra on 31/07/14.
 //  Copyright (c) 2014 Robin's code kitchen. All rights reserved.
 //
+#include <BulletDynamics/btBulletDynamicsCommon.h>
 
 #include <iostream>
 #ifdef __APPLE__
@@ -99,7 +100,6 @@ void drawASnowman()
 	glColor3f(1.0f, 0.5f , 0.5f);
 	glutSolidCone(0.08f,0.5f,10,2);
 }
-
 
 void reshape(int w, int h)
 {
