@@ -369,10 +369,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[13] =
+static yyconst flex_int16_t yy_accept[14] =
     {   0,
-        0,    0,    6,    5,    1,    1,    3,    4,    0,    3,
-        2,    0
+        4,    4,    6,    5,    1,    1,    3,    4,    4,    0,
+        3,    2,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -409,31 +409,31 @@ static yyconst flex_int32_t yy_ec[256] =
 
 static yyconst flex_int32_t yy_meta[7] =
     {   0,
-        1,    1,    1,    1,    2,    1
+        1,    2,    1,    1,    3,    2
     } ;
 
-static yyconst flex_int16_t yy_base[14] =
+static yyconst flex_int16_t yy_base[16] =
     {   0,
-        0,    0,   10,   11,   11,   11,    4,   11,    0,    0,
-        0,   11,    6
+        0,    0,   12,   13,    0,   13,    4,    0,    0,    0,
+        0,    0,   13,    8,    5
     } ;
 
-static yyconst flex_int16_t yy_def[14] =
+static yyconst flex_int16_t yy_def[16] =
     {   0,
-       12,    1,   12,   12,   12,   12,   12,   12,   13,    7,
-       13,    0,   12
+       13,    1,   13,   13,   14,   13,   14,   14,   14,   15,
+        7,   15,    0,   13,   13
     } ;
 
-static yyconst flex_int16_t yy_nxt[18] =
+static yyconst flex_int16_t yy_nxt[20] =
     {   0,
-        4,    5,    4,    6,    7,    8,    9,   11,   10,   12,
-        3,   12,   12,   12,   12,   12,   12
+        4,    5,    4,    6,    7,    8,   10,   12,   11,    9,
+        9,   13,    3,   13,   13,   13,   13,   13,   13
     } ;
 
-static yyconst flex_int16_t yy_chk[18] =
+static yyconst flex_int16_t yy_chk[20] =
     {   0,
-        1,    1,    1,    1,    1,    1,    7,   13,    7,    3,
-       12,   12,   12,   12,   12,   12,   12
+        1,    1,    1,    1,    1,    1,    7,   15,    7,   14,
+       14,    3,   13,   13,   13,   13,   13,   13,   13
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -692,13 +692,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 13 )
+				if ( yy_current_state >= 14 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 11 );
+		while ( yy_base[yy_current_state] != 13 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -1039,7 +1039,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 13 )
+			if ( yy_current_state >= 14 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1067,11 +1067,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 13 )
+		if ( yy_current_state >= 14 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 12);
+	yy_is_jam = (yy_current_state == 13);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1749,6 +1749,18 @@ void yyfree (void * ptr )
 
 int main()
 {
+    FILE *myFile=fopen("a.snazzle.file","r");
+    if(!myFile)
+    {
+        cout<<"a.snazzle.file File not openable";
+        return -1;
+        
+    }
+    else
+    {
+        yyin=myFile;
+    
+    }
 	yylex();
 	return 1;
 }
