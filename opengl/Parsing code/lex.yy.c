@@ -360,8 +360,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 5
-#define YY_END_OF_BUFFER 6
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -371,25 +371,25 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[14] =
     {   0,
-        4,    4,    6,    5,    1,    1,    3,    4,    4,    0,
-        3,    2,    0
+        0,    0,    7,    5,    1,    1,    3,    4,    0,    3,
+        4,    2,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    3,    4,    5,    5,    5,
+        1,    1,    1,    1,    1,    4,    1,    5,    5,    5,
         5,    5,    5,    5,    5,    5,    5,    1,    1,    1,
         1,    1,    1,    1,    6,    6,    6,    6,    6,    6,
         6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
         6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
         1,    1,    1,    1,    1,    1,    6,    6,    6,    6,
 
-        6,    6,    6,    6,    6,    6,    6,    6,    6,    2,
-        6,    6,    6,    6,    6,    2,    6,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
         6,    6,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -409,31 +409,31 @@ static yyconst flex_int32_t yy_ec[256] =
 
 static yyconst flex_int32_t yy_meta[7] =
     {   0,
-        1,    2,    1,    1,    3,    2
+        1,    1,    1,    1,    2,    3
     } ;
 
 static yyconst flex_int16_t yy_base[16] =
     {   0,
-        0,    0,   12,   13,    0,   13,    4,    0,    0,    0,
-        0,    0,   13,    8,    5
+        0,    0,   13,   14,   14,   14,    3,    0,    0,    0,
+        0,    0,   14,    8,   10
     } ;
 
 static yyconst flex_int16_t yy_def[16] =
     {   0,
-       13,    1,   13,   13,   14,   13,   14,   14,   14,   15,
-        7,   15,    0,   13,   13
+       13,    1,   13,   13,   13,   13,   13,   14,   15,    7,
+       14,   15,    0,   13,   13
     } ;
 
-static yyconst flex_int16_t yy_nxt[20] =
+static yyconst flex_int16_t yy_nxt[21] =
     {   0,
-        4,    5,    4,    6,    7,    8,   10,   12,   11,    9,
-        9,   13,    3,   13,   13,   13,   13,   13,   13
+        4,    5,    6,    4,    7,    8,    9,   10,   11,   11,
+       11,   12,   13,    3,   13,   13,   13,   13,   13,   13
     } ;
 
-static yyconst flex_int16_t yy_chk[20] =
+static yyconst flex_int16_t yy_chk[21] =
     {   0,
-        1,    1,    1,    1,    1,    1,    7,   15,    7,   14,
-       14,    3,   13,   13,   13,   13,   13,   13,   13
+        1,    1,    1,    1,    1,    1,    7,    7,    7,   14,
+       14,   15,    3,   13,   13,   13,   13,   13,   13,   13
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -450,12 +450,16 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "Snazzle.l"
-#line 2 "Snazzle.l"
-    #include <iostream>
-    using namespace std;
-    #define YY_DECL extern "C" int yylex()
-#line 459 "lex.yy.c"
+#line 1 "snazzle.l"
+#line 2 "snazzle.l"
+#include <cstdio>
+#include <iostream>
+using namespace std;
+#define YY_DECL extern "C" int yylex()
+
+#include "snazzle.tab.h"  // to get the token types that we return
+
+#line 463 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -637,9 +641,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 6 "Snazzle.l"
+#line 10 "snazzle.l"
 
-#line 643 "lex.yy.c"
+#line 647 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -698,7 +702,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 13 );
+		while ( yy_base[yy_current_state] != 14 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -723,31 +727,41 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
+/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 7 "Snazzle.l"
+#line 11 "snazzle.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "Snazzle.l"
-{cout<<"float"<<endl;}
+#line 12 "snazzle.l"
+{ yylval.fval = atof(yytext); return FLOAT; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "Snazzle.l"
-{cout<<"integers"<<endl;}
+#line 13 "snazzle.l"
+{ yylval.ival = atoi(yytext); return INT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "Snazzle.l"
-{cout<<"Old fashioned something"<<endl;}
+#line 14 "snazzle.l"
+{
+    // we have to copy because we can't rely on yytext not changing underneath us:
+    yylval.sval = strdup(yytext);
+    return STRING;
+}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "Snazzle.l"
+#line 19 "snazzle.l"
+;
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 20 "snazzle.l"
 ECHO;
 	YY_BREAK
-#line 751 "lex.yy.c"
+#line 765 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1744,24 +1758,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 11 "Snazzle.l"
+#line 20 "snazzle.l"
 
 
-int main()
-{
-    FILE *myFile=fopen("a.snazzle.file","r");
-    if(!myFile)
-    {
-        cout<<"a.snazzle.file File not openable";
-        return -1;
-        
-    }
-    else
-    {
-        yyin=myFile;
-    
-    }
-	yylex();
-	return 1;
-}
 

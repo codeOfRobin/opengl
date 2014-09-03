@@ -1,28 +1,20 @@
 %{
-    #include <iostream>
-    using namespace std;
-    #define YY_DECL extern "C" int yylex()
+#include <cstdio>
+#include <iostream>
+using namespace std;
+#define YY_DECL extern "C" int yylex()
+
+#include "snazzle.tab.h"  // to get the token types that we return
+
 %}
 %%
-[/t /n]		;
-[0-9]+\.[0-9]+		{cout<<"float"<<endl;}
-[0-9]+		{cout<<"integers"<<endl;}
-[a-z A-Z 0-9]*	{cout<<"Old fashioned something"<<endl;}
-%%
-int main()
-{
-    FILE *myFile=fopen("a.snazzle.file","r");
-    if(!myFile)
-    {
-        cout<<"a.snazzle.file File not openable";
-        return -1;
-        
-    }
-    else
-    {
-        yyin=myFile;
-    
-    }
-	yylex();
-	return 1;
+[ \t\n]           ;
+[0-9]+\.[0-9]+ { yylval.fval = atof(yytext); return FLOAT; }
+[0-9]+            { yylval.ival = atoi(yytext); return INT; }
+[a-zA-Z0-9]+      {
+    // we have to copy because we can't rely on yytext not changing underneath us:
+    yylval.sval = strdup(yytext);
+    return STRING;
 }
+.                ;
+%%
