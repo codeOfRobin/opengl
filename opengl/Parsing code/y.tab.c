@@ -122,7 +122,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 193 of yacc.c.  */
-#line 126 "bisoner.tab.c"
+#line 126 "y.tab.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -135,7 +135,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 139 "bisoner.tab.c"
+#line 139 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -1317,12 +1317,12 @@ yyreduce:
 #line 25 "bisoner.y"
     {
 			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].string)	);
-			;}
+			}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1326 "bisoner.tab.c"
+#line 1326 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
