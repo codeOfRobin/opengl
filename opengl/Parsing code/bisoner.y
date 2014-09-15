@@ -12,8 +12,7 @@ void yyerror(const char *str)
 
 
 %}
-%token LTOKEN INTEGER LOCATIONWORD WORD
- %option noyywrap
+%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN
 
 %union{
   std::string *str;
@@ -23,11 +22,30 @@ void yyerror(const char *str)
 %token <str> WORD
 
 %%
-location_set:
-			LOCATIONWORD LTOKEN INTEGER WORD
+commands: /* empty */
+        | command commands
+        ;
+
+command:
+        currency_set
+        |
+        location_set
+        |
+        startingMoney_set
+        ;
+
+currency_set:CURRENCYTOKEN WORD
 			{
-			printf("%d  %s",$3,$4	);
+				printf("Currency set to %s",$2);
 			}
+			
+location_set:
+			LOCATIONWORD LTOKEN INTEGER WORD GTOKEN INTEGER
+			{
+			printf("location number %d  set to  %s in froup number %d",$3,$4,$6);
+			}
+
+
 
 %%
 

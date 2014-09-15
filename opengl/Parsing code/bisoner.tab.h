@@ -42,7 +42,9 @@
      LTOKEN = 258,
      INTEGER = 259,
      LOCATIONWORD = 260,
-     WORD = 261
+     WORD = 261,
+     GTOKEN = 262,
+     CURRENCYTOKEN = 263
    };
 #endif
 /* Tokens.  */
@@ -50,6 +52,8 @@
 #define INTEGER 259
 #define LOCATIONWORD 260
 #define WORD 261
+#define GTOKEN 262
+#define CURRENCYTOKEN 263
 
 
 
@@ -62,7 +66,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 1529 of yacc.c.  */
-#line 66 "bisoner.tab.h"
+#line 70 "bisoner.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

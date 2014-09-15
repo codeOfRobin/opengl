@@ -69,7 +69,9 @@
      LTOKEN = 258,
      INTEGER = 259,
      LOCATIONWORD = 260,
-     WORD = 261
+     WORD = 261,
+     GTOKEN = 262,
+     CURRENCYTOKEN = 263
    };
 #endif
 /* Tokens.  */
@@ -77,6 +79,8 @@
 #define INTEGER 259
 #define LOCATIONWORD 260
 #define WORD 261
+#define GTOKEN 262
+#define CURRENCYTOKEN 263
 
 
 
@@ -124,7 +128,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 193 of yacc.c.  */
-#line 128 "bisoner.tab.c"
+#line 132 "bisoner.tab.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -137,7 +141,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 141 "bisoner.tab.c"
+#line 145 "bisoner.tab.c"
 
 #ifdef short
 # undef short
@@ -350,22 +354,22 @@ union yyalloc
 #endif
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  4
+#define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   6
+#define YYLAST   8
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  7
+#define YYNTOKENS  9
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  2
+#define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  2
+#define YYNRULES  7
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  7
+#define YYNSTATES  14
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   261
+#define YYMAXUTOK   263
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -399,7 +403,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6
+       5,     6,     7,     8
 };
 
 #if YYDEBUG
@@ -407,19 +411,21 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3
+       0,     0,     3,     4,     7,     9,    11,    14
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-       8,     0,    -1,     5,     3,     4,     6,    -1
+      10,     0,    -1,    -1,    10,    11,    -1,    12,    -1,    13,
+      -1,     8,     6,    -1,     5,     3,     4,     6,     7,     4,
+      -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    26,    26
+       0,    25,    25,    26,    30,    32,    35,    41
 };
 #endif
 
@@ -429,7 +435,8 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "LTOKEN", "INTEGER", "LOCATIONWORD",
-  "WORD", "$accept", "location_set", 0
+  "WORD", "GTOKEN", "CURRENCYTOKEN", "$accept", "commands", "command",
+  "currency_set", "location_set", 0
 };
 #endif
 
@@ -438,20 +445,20 @@ static const char *const yytname[] =
    token YYLEX-NUM.  */
 static const yytype_uint16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,   260,   261
+       0,   256,   257,   258,   259,   260,   261,   262,   263
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,     7,     8
+       0,     9,    10,    10,    11,    11,    12,    13
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     4
+       0,     2,     0,     2,     1,     1,     2,     6
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -459,27 +466,29 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     0,     1,     0,     2
+       2,     0,     1,     0,     0,     3,     4,     5,     0,     6,
+       0,     0,     0,     7
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2
+      -1,     1,     5,     6,     7
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -6
+#define YYPACT_NINF -5
 static const yytype_int8 yypact[] =
 {
-      -5,    -2,     2,    -1,    -6,     0,    -6
+      -5,     0,    -5,    -2,    -4,    -5,    -5,    -5,    -1,    -5,
+       1,    -3,     2,    -5
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -6,    -6
+      -5,    -5,    -5,    -5,    -5
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -489,19 +498,20 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       1,     3,     4,     5,     0,     0,     6
+       2,     8,     9,    10,    12,     3,    13,    11,     4
 };
 
-static const yytype_int8 yycheck[] =
+static const yytype_uint8 yycheck[] =
 {
-       5,     3,     0,     4,    -1,    -1,     6
+       0,     3,     6,     4,     7,     5,     4,     6,     8
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     5,     8,     3,     0,     4,     6
+       0,    10,     0,     5,     8,    11,    12,    13,     3,     6,
+       4,     6,     7,     4
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1315,16 +1325,23 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 2:
-#line 27 "bisoner.y"
+        case 6:
+#line 36 "bisoner.y"
     {
-			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].str)	);
+				printf("Currency set to %s",(yyvsp[(2) - (2)].str));
+			;}
+    break;
+
+  case 7:
+#line 42 "bisoner.y"
+    {
+			printf("location number %d  set to  %s in froup number %d",(yyvsp[(3) - (6)].number),(yyvsp[(4) - (6)].str),(yyvsp[(6) - (6)].number));
 			;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1328 "bisoner.tab.c"
+#line 1345 "bisoner.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1538,7 +1555,7 @@ yyreturn:
 }
 
 
-#line 31 "bisoner.y"
+#line 48 "bisoner.y"
 
 
 
