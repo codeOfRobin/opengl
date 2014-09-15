@@ -463,8 +463,10 @@ char *yytext;
 #line 1 "lexer.l"
 #line 2 "lexer.l"
 #include <stdio.h>
+#include <string>
 #include "bisoner.tab.h"
-#line 468 "lex.yy.c"
+using namespace std;
+#line 470 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -646,9 +648,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 6 "lexer.l"
+#line 8 "lexer.l"
 
-#line 652 "lex.yy.c"
+#line 654 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -733,40 +735,40 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "lexer.l"
+#line 9 "lexer.l"
 return LOCATIONWORD;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "lexer.l"
+#line 10 "lexer.l"
 return LTOKEN;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "lexer.l"
+#line 11 "lexer.l"
 printf("group");
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "lexer.l"
+#line 12 "lexer.l"
 printf("comment ignored\n");
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "lexer.l"
+#line 13 "lexer.l"
 yylval.number=atoi(yytext);return INTEGER;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 12 "lexer.l"
-yylval=strdup(yytext);return WORD;
+#line 14 "lexer.l"
+yylval.str=new string(yytext);return WORD;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "lexer.l"
+#line 16 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 770 "lex.yy.c"
+#line 772 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1763,7 +1765,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "lexer.l"
+#line 16 "lexer.l"
 
 
 

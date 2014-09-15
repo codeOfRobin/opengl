@@ -1,7 +1,9 @@
 %{
 #include <stdio.h>
-#include <string.h>
- 
+#include <string>
+using namespace std;
+extern int yylex();
+extern void yyerror(char*);
 void yyerror(const char *str)
 {
         fprintf(stderr,"error: %s\n",str);
@@ -11,13 +13,14 @@ void yyerror(const char *str)
 
 %}
 %token LTOKEN INTEGER LOCATIONWORD WORD
+ %option noyywrap
 
 %union{
-  char *str;
+  std::string *str;
   int number;
 }
 %token <number> INTEGER
-%token <string> WORD
+%token <str> WORD
 
 %%
 location_set:
@@ -34,8 +37,8 @@ int yywrap()
         return 1;
 } 
   
-main()
+int main()
 {
         yyparse();
-
+        return 1;
 } 

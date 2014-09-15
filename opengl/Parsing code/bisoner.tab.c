@@ -85,8 +85,10 @@
 #line 1 "bisoner.y"
 
 #include <stdio.h>
-#include <string.h>
- 
+#include <string>
+using namespace std;
+extern int yylex();
+extern void yyerror(char*);
 void yyerror(const char *str)
 {
         fprintf(stderr,"error: %s\n",str);
@@ -116,13 +118,13 @@ void yyerror(const char *str)
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "bisoner.y"
+#line 17 "bisoner.y"
 {
-  char *str;
+  std::string *str;
   int number;
 }
 /* Line 193 of yacc.c.  */
-#line 126 "bisoner.tab.c"
+#line 128 "bisoner.tab.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -135,7 +137,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 139 "bisoner.tab.c"
+#line 141 "bisoner.tab.c"
 
 #ifdef short
 # undef short
@@ -417,7 +419,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    24,    24
+       0,    26,    26
 };
 #endif
 
@@ -1314,15 +1316,15 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 25 "bisoner.y"
+#line 27 "bisoner.y"
     {
-			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].string)	);
+			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].str)	);
 			;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1326 "bisoner.tab.c"
+#line 1328 "bisoner.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1536,7 +1538,7 @@ yyreturn:
 }
 
 
-#line 29 "bisoner.y"
+#line 31 "bisoner.y"
 
 
 
@@ -1545,8 +1547,8 @@ int yywrap()
         return 1;
 } 
   
-main()
+int main()
 {
         yyparse();
-
+        return 1;
 } 

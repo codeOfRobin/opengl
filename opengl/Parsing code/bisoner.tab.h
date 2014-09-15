@@ -56,9 +56,9 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 15 "bisoner.y"
+#line 17 "bisoner.y"
 {
-  char *str;
+  std::string *str;
   int number;
 }
 /* Line 1529 of yacc.c.  */

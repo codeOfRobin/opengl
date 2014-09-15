@@ -1316,7 +1316,7 @@ yyreduce:
         case 2:
 #line 25 "bisoner.y"
     {
-			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].string)	);
+			printf("%d  %s",(yyvsp[(3) - (4)].number),(yyvsp[(4) - (4)].str)	);
 			}
     break;
 
