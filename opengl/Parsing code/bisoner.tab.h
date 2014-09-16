@@ -46,7 +46,8 @@
      GTOKEN = 262,
      CURRENCYTOKEN = 263,
      JAILFINETOKEN = 264,
-     STARTINGMONEYTOKEN = 265
+     STARTINGMONEYTOKEN = 265,
+     RTOKEN = 266
    };
 #endif
 /* Tokens.  */
@@ -58,6 +59,7 @@
 #define CURRENCYTOKEN 263
 #define JAILFINETOKEN 264
 #define STARTINGMONEYTOKEN 265
+#define RTOKEN 266
 
 
 
@@ -70,7 +72,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 1529 of yacc.c.  */
-#line 74 "bisoner.tab.h"
+#line 76 "bisoner.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

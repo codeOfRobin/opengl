@@ -6,6 +6,7 @@ using namespace std;
 %}
 
 %%
+"route"						return RTOKEN;
 "Currency"					return CURRENCYTOKEN;
 "StartingMoney"				return STARTINGMONEYTOKEN;
 "JailFine"					return JAILFINETOKEN;
