@@ -1,0 +1,86 @@
+#Config file
+#============
+#Created Monday 04 August 2014
+
+#Configuration file template for the monopoly Game
+#Use this fill to create the layout of your game and this file can be updated so write your code so that its easily updatable so that you can code the new additions easily
+
+Currency Dollar
+
+StartingMoney 1500
+
+JailFine 50
+
+#Tax is either 10% of the total net worth or 200 of the given currency thats up to the user to pay and the server should verify the amount paid by the user
+Tax 10% 200
+
+
+#Locations
+#Format: location @l# Name @g#
+#Where
+# @l# -> Unique Location Identifier
+# @g# -> Unique group identifier
+#Example: location @l1 Mediterranean Avenue @g1, means Mediterranean Avenue is one location having identifier @l1 and belongs to group @g1
+
+location @l1 Mediterranean Avenue @g1
+location @l2 Baltic_Avenue @g1
+location @l3 The_Angel_Islington @g2
+location @l4 Oriental_Avenue @g2
+.
+.
+.
+.
+.
+.
+location @l20 Boardwalk @g10
+
+
+#Routes
+#Where
+#@l# -> Unique Location Identifier
+#Example: route @l1 @l2, means that there is route between location @l1 and @l2 so user can move his token from @l1 to @l2.
+
+route @l3 @l5
+.
+.
+.
+.
+.
+.
+route @l20 @l1
+
+#Cost
+#format: cost @l# CostPrice Mortgage house1 house2 house3 house4 hotel
+#Where
+#@l# -> Unique Location Identifier
+#And the numbers after @l# is the cost of properties in the above given order
+#Example: cost @l1 50 40 40 80 120 160 200, means location @l1 costs 50 and on motgaging it you will get 40 from the bank. To purachase first house you will have to pay #40 then for second you pay 80, for third you pay 120, for fourth you pay 160 and for the hotel you pay 200.
+
+cost @l1 50 40 40 80 120 160 200
+
+#Rent
+#format: rent @l# site house1 house2 house3 house4 hotel
+#Where
+#@l# -> Unique Location Identifier
+#And the numbers after @l# is the rent of properties in the above given order
+#Example: rent @l1 2 10 30 90 160 250, means the rent for location l1 is 2 and with one house in it the rent is 10, with second house its 30, with third house its 90, #with fourth house its 160 and if you have a hotel then you collect 250.
+
+rent @l1 2 10 30 90 160 250
+.
+.
+.
+.
+.
+
+
+#Utilities could be common for all, 2 Electric Companies and 4 RailRoads.If you own both electric comapnies you collect 4 times the rent written in the Card. if you own 2 #Railroads you collect 2x the rent, if you own 3 Railroads you collect 4x and if you own all 4 then you collect 8x the rent written in the card.
+
+#Chance Cards still WIP
+
+
+#3D Models Extension
+#format: model @l# LocationOfFile 
+#where
+#@l# -> Unique Location Identifier
+#LocationOfFile is the path to the obj File of the 3d Model
+#Example: model @l1 ./Models/City1/City1.obj

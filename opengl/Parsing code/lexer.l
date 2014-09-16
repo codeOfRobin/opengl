@@ -6,7 +6,9 @@ using namespace std;
 %}
 
 %%
-"Currency"					yylval.str=new string(yytext);return CURRENCYTOKEN;
+"Currency"					return CURRENCYTOKEN;
+"StartingMoney"				return STARTINGMONEYTOKEN;
+"JailFine"					return JAILFINETOKEN;
 "location"					return LOCATIONWORD;
 "@l"						return LTOKEN;
 "@g" 						return GTOKEN;

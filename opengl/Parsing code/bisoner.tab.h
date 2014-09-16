@@ -44,7 +44,9 @@
      LOCATIONWORD = 260,
      WORD = 261,
      GTOKEN = 262,
-     CURRENCYTOKEN = 263
+     CURRENCYTOKEN = 263,
+     JAILFINETOKEN = 264,
+     STARTINGMONEYTOKEN = 265
    };
 #endif
 /* Tokens.  */
@@ -54,6 +56,8 @@
 #define WORD 261
 #define GTOKEN 262
 #define CURRENCYTOKEN 263
+#define JAILFINETOKEN 264
+#define STARTINGMONEYTOKEN 265
 
 
 
@@ -66,7 +70,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 1529 of yacc.c.  */
-#line 70 "bisoner.tab.h"
+#line 74 "bisoner.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

@@ -12,7 +12,7 @@ void yyerror(const char *str)
 
 
 %}
-%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN
+%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN JAILFINETOKEN STARTINGMONEYTOKEN
 
 %union{
   std::string *str;
@@ -32,6 +32,8 @@ command:
         location_set
         |
         startingMoney_set
+        |
+        jailFine_set
         ;
 
 currency_set:CURRENCYTOKEN WORD
@@ -44,6 +46,17 @@ location_set:
 			{
 			printf("location number %d  set to  %s in froup number %d",$3,$4,$6);
 			}
+startingMoney_set:
+            STARTINGMONEYTOKEN INTEGER
+            {
+            printf("starting money set to %d \n",$2 );
+            }
+jailFine_set:
+            JAILFINETOKEN INTEGER
+            {
+                printf("jailfine set to %d\n",$2);
+            }
+
 
 
 
