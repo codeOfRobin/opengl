@@ -6,6 +6,8 @@ using namespace std;
 %}
 
 %%
+"rent"						return RENTTOKEN;
+"cost"						return COSTTOKEN;
 "route"						return RTOKEN;
 "Currency"					return CURRENCYTOKEN;
 "StartingMoney"				return STARTINGMONEYTOKEN;
