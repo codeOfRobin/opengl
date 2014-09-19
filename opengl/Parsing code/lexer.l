@@ -18,6 +18,7 @@ using namespace std;
 "#"[a-zA-Z0-9.-_=]+			printf("comment ignored\n");
 [0-9]+						yylval.number=atoi(yytext);return INTEGER;
 [a-zA-Z]+					yylval.str=new string(yytext);return WORD;
-
+"./"[[a-zA-Z0-9]+"/"]*				return FILEPATHTOKEN;
+".obj"						return OBJEXTENSION;
 %%
 

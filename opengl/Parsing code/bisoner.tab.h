@@ -49,7 +49,9 @@
      STARTINGMONEYTOKEN = 265,
      RTOKEN = 266,
      COSTTOKEN = 267,
-     RENTTOKEN = 268
+     RENTTOKEN = 268,
+     FILEPATHTOKEN = 269,
+     OBJEXTENSION = 270
    };
 #endif
 /* Tokens.  */
@@ -64,6 +66,8 @@
 #define RTOKEN 266
 #define COSTTOKEN 267
 #define RENTTOKEN 268
+#define FILEPATHTOKEN 269
+#define OBJEXTENSION 270
 
 
 
@@ -76,7 +80,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 1529 of yacc.c.  */
-#line 80 "bisoner.tab.h"
+#line 84 "bisoner.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

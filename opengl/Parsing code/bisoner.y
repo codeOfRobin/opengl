@@ -12,7 +12,7 @@ void yyerror(const char *str)
 
 
 %}
-%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN JAILFINETOKEN STARTINGMONEYTOKEN RTOKEN COSTTOKEN RENTTOKEN
+%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN JAILFINETOKEN STARTINGMONEYTOKEN RTOKEN COSTTOKEN RENTTOKEN FILEPATHTOKEN OBJEXTENSION
 
 %union{
   std::string *str;
@@ -40,9 +40,15 @@ command:
         cost_set
         |
         rent_set
+        |
+        filepath_found
         ;
+filepath_found:FILEPATHTOKEN WORD OBJEXTENSION
+        {
+            printf(" File %s HAS BEEN IMPORTED\n",$2 );
+        }
 
-rent_set:RENTTOKEN LTOKEN INTEGER INTEGER INTEGER INTEGER INTEGER INTEGER INTEGER
+rent_set:RENTTOKEN LTOKEN INTEGER INTEGER INTEGER INTEGER INTEGER INTEGER INTEGER   
         {
             printf("rent for house no 4 is %d \n",$7);
         } 
