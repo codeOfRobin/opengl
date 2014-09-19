@@ -12,7 +12,7 @@ void yyerror(const char *str)
 
 
 %}
-%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN JAILFINETOKEN STARTINGMONEYTOKEN RTOKEN COSTTOKEN RENTTOKEN FILEPATHTOKEN OBJEXTENSION MODELTOKEN
+%token LTOKEN INTEGER LOCATIONWORD WORD GTOKEN CURRENCYTOKEN JAILFINETOKEN STARTINGMONEYTOKEN RTOKEN COSTTOKEN RENTTOKEN FILEPATHTOKEN OBJEXTENSION MODELTOKEN TAXTOKEN PERCENTSIGN
 
 %union{
   std::string *str;
@@ -42,6 +42,8 @@ command:
         rent_set
         |
         filepath_found
+        |
+        tax_set
         ;
 filepath_found:MODELTOKEN LTOKEN INTEGER FILEPATHTOKEN WORD OBJEXTENSION
         {
@@ -83,7 +85,11 @@ route_add:
                 printf("Route set up between location no %d and %d\n",$3,$5);
             }
 
-
+tax_set:
+        TAXTOKEN INTEGER PERCENTSIGN INTEGER
+        {
+            printf("tax set to %d percent\n",$2 );
+        }
 
 
 %%
@@ -93,9 +99,11 @@ int yywrap()
 {
         return 1;
 } 
-  
+extern FILE * yyin;
+
 int main()
 {
+        yyin=fopen("config.txt","r");
         yyparse();
         return 1;
 } 

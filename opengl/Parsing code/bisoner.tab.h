@@ -52,7 +52,9 @@
      RENTTOKEN = 268,
      FILEPATHTOKEN = 269,
      OBJEXTENSION = 270,
-     MODELTOKEN = 271
+     MODELTOKEN = 271,
+     TAXTOKEN = 272,
+     PERCENTSIGN = 273
    };
 #endif
 /* Tokens.  */
@@ -70,6 +72,8 @@
 #define FILEPATHTOKEN 269
 #define OBJEXTENSION 270
 #define MODELTOKEN 271
+#define TAXTOKEN 272
+#define PERCENTSIGN 273
 
 
 
@@ -82,7 +86,7 @@ typedef union YYSTYPE
   int number;
 }
 /* Line 1529 of yacc.c.  */
-#line 86 "bisoner.tab.h"
+#line 90 "bisoner.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

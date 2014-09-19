@@ -10,6 +10,7 @@
 		7A2D4CFE19B3B6F40037C7C7 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */; };
 		7A2D4CFF19B3B6F40037C7C7 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */; };
 		7A2D4D0019B3B6F40037C7C7 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */; };
+		7A5DA26E19CC513500A364AE /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DA26C19CC513500A364AE /* glm.cpp */; };
 		7A7DD1D119897D55004E1777 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DD1D019897D55004E1777 /* main.cpp */; };
 		7A7DD1D319897D55004E1777 /* opengl.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A7DD1D219897D55004E1777 /* opengl.1 */; };
 		7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1D91989807B004E1777 /* OpenGL.framework */; };
@@ -33,6 +34,8 @@
 		7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletDynamics.framework; sourceTree = "<group>"; };
 		7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinearMath.framework; sourceTree = "<group>"; };
 		7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletCollision.framework; sourceTree = "<group>"; };
+		7A5DA26C19CC513500A364AE /* glm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glm.cpp; sourceTree = "<group>"; };
+		7A5DA26D19CC513500A364AE /* glm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glm.h; sourceTree = "<group>"; };
 		7A7DD1CD19897D55004E1777 /* opengl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = opengl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7DD1D019897D55004E1777 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7A7DD1D219897D55004E1777 /* opengl.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = opengl.1; sourceTree = "<group>"; };
@@ -56,9 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A5DA26F19CC513D00A364AE /* glm */ = {
+			isa = PBXGroup;
+			children = (
+				7A5DA26C19CC513500A364AE /* glm.cpp */,
+				7A5DA26D19CC513500A364AE /* glm.h */,
+			);
+			name = glm;
+			sourceTree = "<group>";
+		};
 		7A7DD1C419897D55004E1777 = {
 			isa = PBXGroup;
 			children = (
+				7A5DA26F19CC513D00A364AE /* glm */,
 				7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */,
 				7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */,
 				7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */,
@@ -137,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5DA26E19CC513500A364AE /* glm.cpp in Sources */,
 				7A7DD1D119897D55004E1777 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +237,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
 			};
@@ -234,6 +252,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;

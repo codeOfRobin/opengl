@@ -18,6 +18,13 @@
 #  include <GL/glut.h>
 #endif
 #include <math.h>       /* sin */
+
+#include "glm.h"
+
+GLMmodel *objmodel_ptr;
+
+
+
 #define PI 3.14159
 float angle = 0.0f;
 float lx=0.0f,lz=-1.0f;
@@ -176,13 +183,32 @@ void renderScene()
     {
         for (int j=-3; j<3; j++)
         {
-            glPushMatrix();
-            glTranslatef(i*10.0, 0.0f, j*10.0);
-            drawASnowman();
-            glPopMatrix();
+            if (i!=0)
+            {
+                glPushMatrix();
+                glTranslatef(i*10.0, 0.0f, j*10.0);
+                drawASnowman();
+                glPopMatrix();
+            }
+         
         }
     }
+
+    if (!objmodel_ptr)
+    {
+        objmodel_ptr = glmReadOBJ("/Users/robinmalhotra2/Developer/opengl/opengl/dragon.obj");
+        if (!objmodel_ptr)
+            exit(0);
+        
+        glmUnitize(objmodel_ptr);
+        glmFacetNormals(objmodel_ptr);
+        glmVertexNormals(objmodel_ptr, 90.0);
+    }
+    glmDraw(objmodel_ptr, GLM_SMOOTH | GLM_MATERIAL);
     
+
+    
+
     if (deltaAngle)
     {
         computeAngle();
