@@ -1,8 +1,7 @@
 CC = g++
 CFLAGS = -Wall
 PROG = cube
-
-SRCS = main.cpp 
+SRCS = main.cpp glm.cpp
 
 ifeq ($(shell uname),Darwin)
 	LIBS = -framework OpenGL -framework GLUT 

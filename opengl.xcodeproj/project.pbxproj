@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A054F8E19EEAF5000BB8ED3 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A054F8419EEAF5000BB8ED3 /* image_DXT.c */; };
+		7A054F8F19EEAF5000BB8ED3 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A054F8619EEAF5000BB8ED3 /* image_helper.c */; };
+		7A054F9019EEAF5000BB8ED3 /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A054F8819EEAF5000BB8ED3 /* SOIL.c */; };
+		7A054F9119EEAF5000BB8ED3 /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A054F8A19EEAF5000BB8ED3 /* stb_image_aug.c */; };
 		7A2D4CFE19B3B6F40037C7C7 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */; };
 		7A2D4CFF19B3B6F40037C7C7 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */; };
 		7A2D4D0019B3B6F40037C7C7 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */; };
 		7A5DA26E19CC513500A364AE /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DA26C19CC513500A364AE /* glm.cpp */; };
 		7A7DD1D119897D55004E1777 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DD1D019897D55004E1777 /* main.cpp */; };
 		7A7DD1D319897D55004E1777 /* opengl.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A7DD1D219897D55004E1777 /* opengl.1 */; };
-		7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1D91989807B004E1777 /* OpenGL.framework */; };
-		7A7DD1DC19898085004E1777 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7DD1DB19898085004E1777 /* GLUT.framework */; };
+		7AE5DF7319EE89B60057C829 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE5DF7219EE89B60057C829 /* OpenGL.framework */; };
+		7AE5DF7519EE89BC0057C829 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE5DF7419EE89BC0057C829 /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +35,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A054F6219EEAABC00BB8ED3 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
+		7A054F8419EEAF5000BB8ED3 /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
+		7A054F8519EEAF5000BB8ED3 /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
+		7A054F8619EEAF5000BB8ED3 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
+		7A054F8719EEAF5000BB8ED3 /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
+		7A054F8819EEAF5000BB8ED3 /* SOIL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL.c; sourceTree = "<group>"; };
+		7A054F8919EEAF5000BB8ED3 /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
+		7A054F8A19EEAF5000BB8ED3 /* stb_image_aug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image_aug.c; sourceTree = "<group>"; };
+		7A054F8B19EEAF5000BB8ED3 /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
+		7A054F8C19EEAF5000BB8ED3 /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
+		7A054F8D19EEAF5000BB8ED3 /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
+		7A054F9219EEB0C700BB8ED3 /* field_128_cube.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = field_128_cube.dds; sourceTree = "<group>"; };
 		7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletDynamics.framework; sourceTree = "<group>"; };
 		7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinearMath.framework; sourceTree = "<group>"; };
 		7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BulletCollision.framework; sourceTree = "<group>"; };
@@ -39,8 +55,8 @@
 		7A7DD1CD19897D55004E1777 /* opengl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = opengl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7DD1D019897D55004E1777 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7A7DD1D219897D55004E1777 /* opengl.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = opengl.1; sourceTree = "<group>"; };
-		7A7DD1D91989807B004E1777 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		7A7DD1DB19898085004E1777 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		7AE5DF7219EE89B60057C829 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7AE5DF7419EE89BC0057C829 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,17 +64,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE5DF7519EE89BC0057C829 /* GLUT.framework in Frameworks */,
+				7AE5DF7319EE89B60057C829 /* OpenGL.framework in Frameworks */,
 				7A2D4CFE19B3B6F40037C7C7 /* BulletDynamics.framework in Frameworks */,
 				7A2D4CFF19B3B6F40037C7C7 /* LinearMath.framework in Frameworks */,
 				7A2D4D0019B3B6F40037C7C7 /* BulletCollision.framework in Frameworks */,
-				7A7DD1DC19898085004E1777 /* GLUT.framework in Frameworks */,
-				7A7DD1DA1989807B004E1777 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A054F8319EEAF5000BB8ED3 /* SOIL */ = {
+			isa = PBXGroup;
+			children = (
+				7A054F8419EEAF5000BB8ED3 /* image_DXT.c */,
+				7A054F8519EEAF5000BB8ED3 /* image_DXT.h */,
+				7A054F8619EEAF5000BB8ED3 /* image_helper.c */,
+				7A054F8719EEAF5000BB8ED3 /* image_helper.h */,
+				7A054F8819EEAF5000BB8ED3 /* SOIL.c */,
+				7A054F8919EEAF5000BB8ED3 /* SOIL.h */,
+				7A054F8A19EEAF5000BB8ED3 /* stb_image_aug.c */,
+				7A054F8B19EEAF5000BB8ED3 /* stb_image_aug.h */,
+				7A054F8C19EEAF5000BB8ED3 /* stbi_DDS_aug.h */,
+				7A054F8D19EEAF5000BB8ED3 /* stbi_DDS_aug_c.h */,
+			);
+			path = SOIL;
+			sourceTree = "<group>";
+		};
 		7A5DA26F19CC513D00A364AE /* glm */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +104,13 @@
 		7A7DD1C419897D55004E1777 = {
 			isa = PBXGroup;
 			children = (
+				7A054F8319EEAF5000BB8ED3 /* SOIL */,
+				7AE5DF7419EE89BC0057C829 /* GLUT.framework */,
+				7AE5DF7219EE89B60057C829 /* OpenGL.framework */,
 				7A5DA26F19CC513D00A364AE /* glm */,
 				7A2D4CFB19B3B6F40037C7C7 /* BulletDynamics.framework */,
 				7A2D4CFC19B3B6F40037C7C7 /* LinearMath.framework */,
 				7A2D4CFD19B3B6F40037C7C7 /* BulletCollision.framework */,
-				7A7DD1DB19898085004E1777 /* GLUT.framework */,
-				7A7DD1D91989807B004E1777 /* OpenGL.framework */,
 				7A7DD1CF19897D55004E1777 /* opengl */,
 				7A7DD1CE19897D55004E1777 /* Products */,
 			);
@@ -93,6 +127,8 @@
 		7A7DD1CF19897D55004E1777 /* opengl */ = {
 			isa = PBXGroup;
 			children = (
+				7A054F6219EEAABC00BB8ED3 /* img.png */,
+				7A054F9219EEB0C700BB8ED3 /* field_128_cube.dds */,
 				7A7DD1D019897D55004E1777 /* main.cpp */,
 				7A7DD1D219897D55004E1777 /* opengl.1 */,
 			);
@@ -125,7 +161,7 @@
 		7A7DD1C519897D55004E1777 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Robin's code kitchen";
 			};
 			buildConfigurationList = 7A7DD1C819897D55004E1777 /* Build configuration list for PBXProject "opengl" */;
@@ -150,8 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A054F9019EEAF5000BB8ED3 /* SOIL.c in Sources */,
 				7A5DA26E19CC513500A364AE /* glm.cpp in Sources */,
+				7A054F8F19EEAF5000BB8ED3 /* image_helper.c in Sources */,
+				7A054F9119EEAF5000BB8ED3 /* stb_image_aug.c in Sources */,
 				7A7DD1D119897D55004E1777 /* main.cpp in Sources */,
+				7A054F8E19EEAF5000BB8ED3 /* image_DXT.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +233,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -226,7 +266,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -241,8 +281,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/opengl",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -257,8 +301,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/opengl",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

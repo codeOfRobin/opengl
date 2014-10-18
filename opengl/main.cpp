@@ -10,17 +10,16 @@
 #include <iostream>
 #ifdef __APPLE__
 #  include <OpenGL/gl.h>
-#  include <OpenGL/glu.h>
-#  include <GLUT/glut.h>
+#  include <OpenGL/OpenGL.h>
+#  include <GLUT/GLUT.h>
 #else
-#  include <GL/gl.h>
+#  inclusde <GL/gl.h>
 #  include <GL/glu.h>
 #  include <GL/glut.h>
 #endif
 #include <math.h>       /* sin */
-
 #include "glm.h"
-
+#include "SOIL.h"
 GLMmodel *objmodel_ptr;
 
 
@@ -148,7 +147,7 @@ void windowInit()
     glShadeModel (GL_FLAT);
     glPolygonMode(GL_FRONT, GL_FILL);
     glPolygonMode(GL_BACK, GL_LINE);
-
+    glEnable( GL_TEXTURE_2D );
 
     glEnable(GL_DEPTH_TEST);
 
@@ -171,10 +170,29 @@ void renderScene()
               lx+x, 1.0f,  lz+z,
               0.0f, 1.0f,  0.0f);
     glColor3f(0.9f, 0.9f, 0.9f);
-    glBegin(GL_QUADS);
+    
+    GLuint tex_2d = SOIL_load_OGL_texture
+	(
+     "/Users/robinmalhotra2/Downloads/Simple OpenGL Image Library/img_cheryl.jpg",
+     SOIL_LOAD_AUTO,
+     SOIL_CREATE_NEW_ID,
+     SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+     );
+    
+    if( 0 == tex_2d )
+    {
+        printf( "SOIL loading error: '%s'\n", SOIL_last_result() );
+    }
+    glTexCoord3f(-100.0f, 0.0f, 100.0f);
     glVertex3f(-100.0f, 0.0f, 100.0f);
+    
+    glTexCoord3f(100.0f, 0.0f, 100.0f);
     glVertex3f(100.0f, 0.0f, 100.0f);
+    
+    glTexCoord3f(100.0f, 0.0f, -100.0f);
     glVertex3f(100.0f, 0.0f, -100.0f);
+    
+    glTexCoord3f(-100.0f, 0.0f, -100.0f);
     glVertex3f(-100.0f, 0.0f, -100.0f);
 
     glEnd();
